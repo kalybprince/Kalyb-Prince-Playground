@@ -1,10 +1,10 @@
-from flask import Flask, render_template  # Import Flask to allow us to create our app
+from flask import Flask, render_template
 
-app = Flask(__name__)    # Create a new instance of the Flask class called "app"
+app = Flask(__name__)
 
-@app.route('/')          # The "@" decorator associates this route with the function immediately following
+@app.route('/')
 def index():
-    return 'Welcome to the index page!'  # Return the string 'Hello World!' as a response
+    return 'Welcome to the index page!'
 
 @app.route('/play/<int:number>/<string:color>')
 def play(number, color):
@@ -14,5 +14,5 @@ def play(number, color):
 def my_error(err_no):
     return f"Sorry! No response.  Try again. ({err_no})"
 
-if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
-    app.run(debug=True)    # Run the app in debug mode.
+if __name__=="__main__":
+    app.run(debug=True)
